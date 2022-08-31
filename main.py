@@ -1,4 +1,5 @@
 
+
 import requests
 
 endpoint = "https://www.googleapis.com/books/v1/volumes"
@@ -11,4 +12,6 @@ for book in response["items"]:
     title = volume["title"]
     published = volume["publishedDate"]
     description = volume["description"]
-    print(f"{title} ({published}) | {description}")
+    imageLinks = volume["imageLinks"]
+
+    print(f"Título:{title} (Data Publicação: {published})\n Descrição: {description}\n(Imagem:{imageLinks})\t")
